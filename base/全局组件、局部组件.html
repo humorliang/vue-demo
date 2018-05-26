@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>全局组件、局部组件</title>
+    <script src="vue.js"></script>
 </head>
+
 <body>
-    <div></div>
+    <div id="root">
+        <!-- 全局组建直接使用 -->
+        <g-component></g-component>
+
+        <!-- 局部组件注册以后可以直接使用 -->
+        <component-a></component-a>
+    </div>
+
+    <script>
+        //组件的命名严格按vue标准，否则组件出错
+        /*定义组件名的方式有两种：
+         使用 kebab-case：
+            Vue.component('my-component-name', { }) 
+            当使用 kebab-case (短横线分隔命名) 定义一个组件时，你也必须在引用这个自定义元素时使用 kebab-case，例如
+            <my-component-name>。 
+        使用 PascalCase:
+            Vue.component('MyComponentName', {  }) 
+            当使用 PascalCase (驼峰式命名) 定义一个组件时，你在引用这个自定义元素时两种命名法都可以使用。也就是说
+            <my-component-name> 和<MyComponentName> 都是可接受的。注意，尽管如此，
+            直接在 DOM (即非字符串的模板) 中使用时只有 kebab-case 是有效的。
+        */
+        //定义全局组件
+        Vue.component('g-component', {
+            data: function () {
+                return {
+                    msg: 'global component'
+                }
+            },
+            template: '<p>{{msg}}</p>'
+        });
+        //局部组件注册 通过一个JavaScript对象进行实现
+        var ComponentA = {
+            data: function () {
+                return {
+                    msg: 'componentA'
+                }
+            },
+            template: '<p>{{msg}}</p>'
+        }
+        new Vue({
+            el: '#root',
+            //局部组建在根实例中注册
+            components: {
+                'component-a': ComponentA
+            }
+        })
+    </script>
+
 </body>
+
 </html>
