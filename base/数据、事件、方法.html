@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数据、事件、方法</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <!-- 创建挂载点Dom-->
+    <div id="root">
+        <!-- 数据渲染方法一:插值表达式 -->
+        <div>{{msg}}</div>
+        <!-- 在{{}}可以使用js语法 -->
+        <div>{{msg.split(' ').join('-')}}</div>
+        <!-- 数据渲染方法二:指令方式 -->
+        <div v-text='msg'></div>
+        <!-- 标签不转义 -->
+        <div v-text='msg2'></div>
+        <!-- 与text的区别是标签符转义 -->
+        <div v-html='msg'></div>
+        <div v-html='msg2'></div>
+
+        <!--事件 -->
+        <!-- 事件绑定方法1 -->
+        <div v-on:click='show'>点击我</div>
+        <!-- 事件绑定方法2 简写方式 -->
+        <div @click='show'>点击我2</div>
+
+    </div>
+
+    <script>
+        //创建一个Vue实例 
+        new Vue({
+            el: '#root',
+            data: {
+                msg: 'love is not like',
+                msg2:'<div>like<div>'
+            },
+            //vue定义事件方法
+            methods: {
+                show: function () {
+                    alert(this.msg);
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

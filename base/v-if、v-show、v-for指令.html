@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-for、v-if、v-show指令</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- v-if指令 -->
+        <!-- v-if指令是删除dom树 -->
+        <div v-if='show'>{{msg}}</div>
+        <button @click='taggle'>变换</button>
+
+        <!-- v-show指令 -->
+        <!-- v-show指令是改变元素的display属性 -->
+        <div v-show='show'>v-show指令</div>
+
+
+        <!-- v-for指令 -->
+        <!-- 在属性中定义一个唯一的key有助于提高性能 -->
+        <ul>
+            <li v-for='(item,index) of list' :key='index'>{{item+'-'+index}}</li>
+        </ul>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                show: true,
+                msg: 'hello',
+                list: ['1', '2', '3']
+            },
+            methods: {
+                taggle: function () {
+                    //取反操作
+                    this.show = !this.show
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

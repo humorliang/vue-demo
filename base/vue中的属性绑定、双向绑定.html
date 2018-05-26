@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性绑定、双向绑定</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+   <div id="root">
+        <!-- 模板内容 -->
+        <!-- 属性绑定 属性里面的值也能使用js表达式-->
+        <div v-bind:title='title'>{{msg}}</div>
+        <!-- 属性绑定的简写方式 -->
+        <div :title='title'>{{msg}}</div>
+        <hr>
+        <!-- 数据的双向绑定 用在表单元素中-->
+        <input type="text" v-model='content'>
+        <div>{{content}}</div>
+   </div> 
+   <script>
+       new Vue({
+           el:'#root',
+           data:{
+               msg:'hello',
+               title:'this is title',
+               content:'world'
+           }
+       })
+   </script>
+</body>
+</html>

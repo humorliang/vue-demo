@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件基础</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+
+    <div id="root">
+        <!-- 在根组件中进行子组件的使用的使用 -->
+        <my-component></my-component>
+
+        <!-- 驼峰命名法的组件名不能直接在DOM中使用 -->
+        <!-- <myComponent></myComponent> -->
+    </div>
+
+    <script>
+        //定义一个组件，每一个组件都是一个vue实例
+        Vue.component('my-component', {
+            //组件中的data应该为一个函数
+            data: function () {
+                //该函数返回数据对象
+                return {
+                    msg: '子组件'
+                }
+            },
+            template: '<p>{{msg}}</p>'
+        });
+        //组件命名的时候使用驼峰命名法时不能直接在dom中使用
+        Vue.component('myComponent', {
+            //组件中的data应该为一个函数
+            data: function () {
+                //该函数返回数据对象
+                return {
+                    msg: '子组件2'
+                }
+            },
+            template: '<p>{{msg}}</p>'
+        })
+        //创建一个vue根实例
+        new Vue({
+            el: '#root'
+        });
+    </script>
+</body>
+
+</html>
