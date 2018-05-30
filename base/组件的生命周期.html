@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>组件的生命周期</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <template></template>
+
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            //
+            data: {
+                msg: '书'
+            },
+            template: '<div><h1>{{msg}}</h1><button @click="destroyFuc">销毁</button><button @click="alterFun">更新</button></div>',
+            methods: {
+                destroyFuc(){
+                    this.$destroy()
+                },
+                alterFun(){
+                    this.msg='book'
+                }
+            },
+            //生命周期中的钩子函数
+            //在实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前被调用
+            //通常用在组件获取数据时使用
+            beforeCreate: function () {
+                alert('实例初始化后，数据没有加载');
+            },
+            /*在实例创建完成后被立即调用。在这一步，实例已完成以下的配置：
+            数据观测 (data observer)，
+            属性和方法的运算，
+            watch/event 事件回调。
+            然而，挂载阶段还没开始，$el 属性目前不可见。
+                       */
+            created: function () {
+                alert('实例完，开始加载数据')
+            },
+            //在挂载开始之前被调用：相关的 render 函数首次被调用。
+            beforeMount: function () {
+                alert('挂载之前调用')
+            },
+            /*el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。
+            如果 root 实例挂载了一个文档内元素，
+            当 mounted 被调用时 vm.$el 也在文档内。
+                       */
+            mounted: function () {
+                alert('组件挂载到实例后调用')
+            },
+            //数据更新之前
+            beforeUpdate: function () {
+                alert('数据更新之前')
+            },
+            //数据更新之后
+            updated: function () {
+                alert('数据更新之后')
+            },
+            //keep-alive 组件激活时调用。
+            activated: function () {
+                alert('keep-alive 组件激活时调用')
+            },
+            //keep-alive 组件停用时调用
+            deactivated: function () {
+                alert('keep-alive 组件停用时调用')
+            },
+            //实例销毁之前调用
+            beforeDestroy: function () {
+                alert('实例销毁之前调用')
+            },
+            //Vue 实例销毁后调用 ,销毁会移除所有的监听的事件和属性
+            destroyed: function () {
+                alert('Vue 实例销毁后调用')
+            },
+            errorCaptured: function () {}
+        })
+    </script>
+</body>
+
+</html>

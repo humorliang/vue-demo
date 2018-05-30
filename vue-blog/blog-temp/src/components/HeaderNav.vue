@@ -65,7 +65,6 @@ export default {
     margin-right: 100px;
     line-height: 60px;
 }
-
 .logo {
     height: 80%;
     vertical-align: middle;

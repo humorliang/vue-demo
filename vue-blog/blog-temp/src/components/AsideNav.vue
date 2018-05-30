@@ -1,49 +1,84 @@
 <template>
     <div>
-        <el-collapse
-            v-model="activeName"
-            accordion
-        >
-            <el-collapse-item
-                title="归档信息"
-                name="1"
+        <el-col :span="24">
+            <el-menu
+                default-active="2"
+                class="el-menu-vertical-demo"
+                @open="handleOpen"
+                @close="handleClose"
+                background-color="#545c64"
+                text-color="#fff"
+                active-text-color="#ffd04b"
             >
-                <div>2018</div>
-                <div>2017</div>
-                </el-collapse-item>
-                <el-collapse-item
-                    title="技术分类"
-                    name="2"
-                >
-                    <div>JavaScript</div>
-                    <div>Python</div>
-                    </el-collapse-item>
-                    <el-collapse-item
-                        title="最热文章"
-                        name="3"
-                    >
-                        <div>简化流程：设计简洁直观的操作流程；</div>
-                        <div>清晰明确：语言表达清晰且表意明确，让用户快速理解进而作出决策；</div>
-                        <div>帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。</div>
-                        </el-collapse-item>
-                        <el-collapse-item
-                            title="可控 Controllability"
-                            name="4"
-                        >
-                            <div>用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策；</div>
-                            <div>结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。</div>
-                            </el-collapse-item>
-                            </el-collapse>
+                <el-submenu index="1">
+                    <template slot="title">
+                        <i class="el-icon-date"></i>
+                        <span>文章归档</span>
+                    </template>
+                    <el-menu-item-group>
+                        <el-submenu index="1-1">
+                            <template slot="title">2018年</template>
+                            <el-menu-item index="1-1-1">2018(3)</el-menu-item>
+                            <el-menu-item index="1-1-2">2018(2)</el-menu-item>
+                        </el-submenu>
+                        <el-submenu index="1-2">
+                            <template slot="title">2017年</template>
+                            <el-menu-item index="1-2-1">2017(3)</el-menu-item>
+                            <el-menu-item index="1-2-2">2017(2)</el-menu-item>
+                        </el-submenu>
+                    </el-menu-item-group>
+                </el-submenu>
+                <el-submenu index="2">
+                    <template slot="title">
+                        <i class="el-icon-menu"></i>
+                        <span>文章分类</span>
+                    </template>
+                    <el-menu-item-group>
+                        <el-menu-item index="2-1">JavaScript</el-menu-item>
+                        <el-menu-item index="2-2">python</el-menu-item>
+                        <el-menu-item index="2-3">服务器</el-menu-item>
+                        <el-menu-item index="2-4">vue</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+                <el-submenu index="3">
+                    <template slot="title">
+                        <i class="el-icon-tickets"></i>
+                        <span>最新文章</span>
+                    </template>
+                    <el-menu-item-group>
+                        <el-menu-item index="3-1">文章一</el-menu-item>
+                        <el-menu-item index="3-2">文章一</el-menu-item>
+                        <el-menu-item index="3-3">文章一</el-menu-item>
+                        <el-menu-item index="3-4">文章一</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+                <el-submenu index="4">
+                    <template slot="title">
+                        <i class="el-icon-loading"></i>
+                        <span>随机推荐</span>
+                    </template>
+                    <el-menu-item-group>
+                        <el-menu-item index="4-1">文章一</el-menu-item>
+                        <el-menu-item index="4-2">文章一</el-menu-item>
+                        <el-menu-item index="4-3">文章一</el-menu-item>
+                        <el-menu-item index="4-4">文章一</el-menu-item>
+                    </el-menu-item-group>
+                </el-submenu>
+
+                </el-menu>
+        </el-col>
     </div>
 </template>
 
-//
 <script>
 export default {
-    data() {
-      return {
-        activeName: '1'
-      };
+    methods: {
+        handleOpen(key, keyPath) {
+            console.log(key, keyPath);
+        },
+        handleClose(key, keyPath) {
+            console.log(key, keyPath);
+        }
     }
 }
 </script>
