@@ -32,9 +32,16 @@
 import AsideNav from "@/components/AsideNav.vue";
 import Comment from "@/components/Comment.vue";
 export default {
+  data() {
+      return{
+          author:'',
+          time:'',
+          
+      }
+  },
   components: {
     "aside-nav": AsideNav,
-    "comment-bar":Comment
+    "comment-bar": Comment
   }
 };
 </script>
@@ -54,5 +61,4 @@ h1 {
   padding: 0 10px;
 }
 /* 留言 */
-
 </style>

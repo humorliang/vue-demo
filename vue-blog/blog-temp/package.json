@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "element-ui": "^2.4.0",
+    "top-gitment": "0.0.2",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   },

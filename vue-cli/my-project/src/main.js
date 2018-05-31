@@ -4,6 +4,11 @@ import Vue from 'vue'
 //对根组件进行导入
 import TodoList from './TodoList'
 
+import VueDisqus from 'vue-disqus'
+
+Vue.use(VueDisqus)
+
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

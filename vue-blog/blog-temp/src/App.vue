@@ -3,12 +3,14 @@
         <el-container>
             <el-header>
                 <!-- 头部组件 -->
-                <header-nav></header-nav>
+                <!-- <header-nav></header-nav> -->
+                <router-view name="header"></router-view>
             </el-header>
             <!-- 视图挂载点 -->
             <router-view/>
             <el-footer>
-                <footer-bar></footer-bar>
+                <!-- <footer-bar></footer-bar> -->
+                <router-view name="footer"></router-view>                
             </el-footer>
         </el-container>
     </div>
@@ -16,15 +18,14 @@
 
 <script>
 //导入组件
-import HeaderNav from "./components/HeaderNav.vue";
-
-import FooterBar from '@/components/FooterBar.vue'
-export default {
-    components: {
-        "header-nav": HeaderNav,
-        "footer-bar": FooterBar
-    }
-};
+// import HeaderNav from "./components/HeaderNav.vue";
+// import FooterBar from './components/FooterBar.vue'
+// export default {
+//     components: {
+//         "header-nav": HeaderNav,
+//         "footer-bar": FooterBar
+//     }
+// };
 </script>
 
 <style lang="stylus">
@@ -32,8 +33,8 @@ body {
     margin: 0;
 }
 
-.el-header {
-    background: #545c64;
+header.el-header {
+    padding:0;
 }
 
 #app {

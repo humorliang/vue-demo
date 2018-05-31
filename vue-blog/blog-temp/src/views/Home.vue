@@ -19,6 +19,7 @@
                                 </el-carousel-item>
                         </el-carousel>
                     </div>
+                    <!-- 主页文章 -->
                     <post-item :num='list'></post-item>
                 </el-main>
             </el-container>

@@ -1,35 +1,40 @@
 <template>
     <div>
-        <el-row v-for="item of num" :key="item" class="post-item">
+        <el-row v-for="item of data" :key="item.postId" class="post-item">
             <el-card class="box-card">
-                <div class="post-tag">
-                    <el-tag type="success">标签二</el-tag>
-                    <el-tag type="info">标签三</el-tag>
+                <div class="post-tag pointer-click">
+                    <el-tag
+                    v-for="(la,index) of item.label"
+                    :key='index'
+                    type="success"
+                    >{{la}}</el-tag>
                 </div>
                 <el-col :span="6">
                     <div class="grid-content">
-                        <img src="../assets/img/postimg.jpg" alt="文章图片"></div>
+                        <img :src="item.imgUrl" alt="文章图片"></div>
                 </el-col>
                 <el-col :span="17" class="post-content">
                     <div class="">
-                        <h2>这是文章的标题</h2>
-                        <p v-text='msg'>
+                        <h2 @click="toPostCon(item.postId)" class="pointer-click">{{item.title}}</h2>
+                        <p class="pointer-click">
+                            <!-- 对描述进行过滤 -->
+                            {{strLength(item.description)}}
                         </p>
                         <div>
-                            <el-row type="flex" class="row-bg" justify="end">
-                                <el-col :span="4">
-                                    <div class="">2018-2-2</div>
-                                </el-col>
-                                <el-col :span="4">
-                                    <div class="">浏览(120)</div>
-                                </el-col>
-                                <el-col :span="4">
-                                    <div class="">评论(10)</div>
-                                </el-col>
-                                <el-col :span="4">
-                                    <div class=""><i class="iconfont icon-aixin"></i>(10)</div>
-                                </el-col>
-                            </el-row>
+                            <div class="cf">
+                                <div class="post-info">
+                                    <div class=""><i class="iconfont icon-shijian"></i>{{item.time}}</div>
+                                </div>
+                                <div class="post-info">
+                                    <div class="pointer-click" @click="toPostCon(item.postId)"><i class="iconfont icon-liulan"></i>({{item.viewNum}})</div>
+                                </div>
+                                <div class="post-info">
+                                    <div class="pointer-click" @click="toPostCon(item.postId)"><i class="iconfont icon-pinglun"></i>({{item.commentNum}})</div>
+                                </div>
+                                <div class="post-info">
+                                    <div class="pointer-click"><i class="iconfont icon-aixin"></i>({{item.thumbs}})</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </el-col>
@@ -43,29 +48,46 @@
     /*  */
     export default {
         // 接受父组件的属性传参
-        props: ["num"],
-        data: function() {
-            return {
-                msg: ''
+        props: ["data"],
+        methods:{
+            toPostCon(id){
+                // console.log(id);
+                this.$router.push({name:'postCon',query:{id:id}})
+            },
+            strLength(str){
+                //90字符
+            if (str.length >= 90) {
+                str = str.slice(0, 90) + '...'
+                return str
+            }else {
+                return str
             }
-        },
-        created: function() {
-            this.msg = '这是一篇很长的文很长的文很的文很长的文很文很的文很文很长的文很长的文很文很长的文很长的文很文很长的文很长的文很文很长的文很长的文很长的文很长的文很长的文很长的文很长的文很长的文很长的文很长的文章'
+            }
         },
         mounted: function() {
-            //90字符
-            if (this.msg.length >= 90) {
-                this.msg = this.msg.slice(0, 90) + '...'
-            }
+            
         }
     };
 </script>
 
 
 <style scoped>
+.cf{
+    overflow: hidden;
+    padding-left: 20px;
+}
+.post-info{
+    float: left;
+    padding: 2px;
+    margin: 0 5px;
+}
+    .pointer-click{
+        cursor: pointer;
+    }
     /*  */
     .post-tag {
         padding: 0 10px 10px 10px;
+        cursor: pointer;
     }
     .post-tag .el-tag {
         margin: 0 10px;
@@ -88,5 +110,8 @@
     }
     .post-content {
         margin-left: 10px;
+    }
+    .post-content p{
+        min-height: 70px;
     }
 </style>
