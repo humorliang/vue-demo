@@ -20,7 +20,7 @@
                         </el-carousel>
                     </div>
                     <!-- 主页文章 -->
-                    <post-item :num='list'></post-item>
+                    <post-item :data="data"></post-item>
                 </el-main>
             </el-container>
         </el-container>
@@ -35,8 +35,18 @@ import PostItem from '@/components/PostItem.vue'
 export default {
     data() {
         return {
-            list:['1', '2', '3']
+            data:''
         }
+    },
+    created:function(){
+        // 文章数据
+        var postdata=[
+            {postId:'1',imgUrl:'http://a.hiphotos.baidu.com/image/pic/item/730e0cf3d7ca7bcb6a172486b2096b63f624a82f.jpg',title:'文章的标题111',description:'这是一段文章的简介',author:'tempt',time:'2017-2-6',viewNum:'100',commentNum:'7',thumbs:'10',label:['label1','label2']},
+            {postId:'2',imgUrl:'http://a.hiphotos.baidu.com/image/pic/item/730e0cf3d7ca7bcb6a172486b2096b63f624a82f.jpg',title:'文章的标题211',description:'这是一段文章的简介',author:'tempt',time:'2017-6-3',viewNum:'100',commentNum:'6',thumbs:'11',label:['label1','label2']},
+            {postId:'3',imgUrl:'http://a.hiphotos.baidu.com/image/pic/item/730e0cf3d7ca7bcb6a172486b2096b63f624a82f.jpg',title:'文章的标题311',description:'这是一段文章的简介',author:'tempt',time:'2017-5-6',viewNum:'100',commentNum:'5',thumbs:'12',label:['label1','label2']},
+        ];
+        this.data=postdata; 
+        // console.log(this.data);
     },
     components: {
         "aside-nav": AsideNav,

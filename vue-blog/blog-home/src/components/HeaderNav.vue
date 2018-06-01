@@ -15,7 +15,7 @@
                 alt="龙在江湖"
                 class="logo"
             ></div>
-        <el-menu-item index="1">首页</el-menu-item>
+        <el-menu-item index="1" @click="toHome">首页</el-menu-item>
         <el-submenu index="2">
             <template slot="title">前端厨房
             </template>
@@ -64,6 +64,9 @@ export default {
     methods: {
         handleSelect(key, keyPath) {
             console.log(key, keyPath);
+        },
+        toHome(){
+            this.$router.push({name:'home'})            
         },
         toMenu_5(){
             this.$router.push({name:'msgBoard'})

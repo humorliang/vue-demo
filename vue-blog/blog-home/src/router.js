@@ -30,8 +30,13 @@ export default new Router({
     //文章列表路由
     {
       path: "/postList",
-      redirect:{name:'menu',params:{kind:'js'}},
-      components:{
+      redirect: {
+        name: 'menu',
+        params: {
+          kind: 'js'
+        }
+      },
+      components: {
         "default": PostList,
         "header": HeaderNav,
         "footer": FooterBar
@@ -53,8 +58,8 @@ export default new Router({
         // 语言种类路由
         {
           name: 'languageKind',
-            path: 'language/:name',
-            component: PostItem
+          path: 'language/:name',
+          component: PostItem
         }
       ]
     },

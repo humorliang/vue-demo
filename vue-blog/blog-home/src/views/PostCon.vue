@@ -11,14 +11,14 @@
                     <!-- 二级视图挂载点 -->
                     <el-card class="box-card">
                         <div slot="header" class="post-title">
-                            <h1>这是文章的标题</h1>
+                            <h1>{{title}}</h1>
                             <el-row type="flex" justify="center">
-                                <el-col :span="2">作者</el-col>
-                                <el-col :span="2">时间</el-col>
+                                <el-col :span="6">作者：{{author}}</el-col>
+                                <el-col :span="6">时间：{{time}}</el-col>
                             </el-row>
                         </div>
                         <div>
-                            这是文章的具体内容
+                            {{content}}
                         </div>
                     </el-card>
                     <comment-bar></comment-bar>
@@ -36,8 +36,15 @@ export default {
       return{
           author:'',
           time:'',
-          
+          content:'',
+          title:''
       }
+  },
+  created(){
+      this.author='tempt',
+      this.time='2018-9-5',
+      this.content='这是文章的的内容内容',
+      this.title='这是一个牛逼的文章标题'
   },
   components: {
     "aside-nav": AsideNav,

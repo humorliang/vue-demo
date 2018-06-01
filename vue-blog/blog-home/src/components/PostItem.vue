@@ -98,6 +98,7 @@
     .post-item .el-col h2 {
         margin: 0;
         padding: 0 20px;
+        font-size: 18px;
     }
     .post-item .el-col p {
         text-indent: 2em;
