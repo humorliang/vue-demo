@@ -1,12 +1,21 @@
 <template>
   <div>
-    <el-form ref="form" label-width="80px">
+    <el-form ref="form" label-width="90px">
       <el-form-item label="文章标题">
         <el-col :span="10">
-        <el-input></el-input>
+          <el-input></el-input>
         </el-col>
       </el-form-item>
-       <el-form-item label="创作时间">
+      <el-form-item label="文章封面图">
+        <el-col :span="10">
+          <el-upload class="upload-demo" ref="upload" action="" :on-preview="handlePreview" :on-remove="handleRemove" :file-list="fileList" :auto-upload="false">
+            <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
+            <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">上传到服务器</el-button>
+            <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+          </el-upload>
+        </el-col>
+      </el-form-item>
+      <el-form-item label="创作时间">
         <el-col :span="5">
           <el-date-picker v-model="formInline.date" type="date" placeholder="创作日期" style="width: 100%;"></el-date-picker>
         </el-col>
@@ -19,12 +28,12 @@
       </el-form-item>
       <el-form-item label="文章作者">
         <el-col :span="5">
-        <el-input></el-input>
+          <el-input></el-input>
         </el-col>
       </el-form-item>
-     <el-form-item label="文章简介">
+      <el-form-item label="文章简介">
         <el-col :span="10">
-        <textarea name="post-info" id="post-info" cols="60" rows="10"></textarea>
+          <textarea name="post-info" id="post-info" cols="60" rows="10"></textarea>
         </el-col>
       </el-form-item>
     </el-form>
@@ -46,11 +55,12 @@ import editor from '@/components/editor.vue'
 export default {
   data() {
     return {
-      formInline:{
+      formInline: {
         // 接受选择表单的数据
-        value:'',
-        date:''
-      }
+        value: '',
+        date: ''
+      },
+      fileList: []
     }
   },
   components: {
@@ -59,6 +69,15 @@ export default {
   methods: {
     onSubmit() {
       console.log('submit!')
+    },
+    submitUpload() {
+      this.$refs.upload.submit()
+    },
+    handleRemove(file, fileList) {
+      console.log(file, fileList)
+    },
+    handlePreview(file) {
+      console.log(file)
     }
   }
 }
