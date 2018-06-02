@@ -5,11 +5,11 @@
 </template>
 
 <script>
-    export default {
-        
-    }
+// 默认导出对象
+export default {
+
+}
 </script>
 
 <style scoped>
-
 </style>

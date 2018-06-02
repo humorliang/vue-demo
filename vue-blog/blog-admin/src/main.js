@@ -6,6 +6,7 @@ import router from './router';
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 
+
 //导入自定义图标
 import './icon/iconfont.css'
 
@@ -16,5 +17,6 @@ Vue.config.productionTip = false;
 
 new Vue({
   router,
-  render: h => h(App)
+  // render: h => h(App)
+  render:c =>c(App)
 }).$mount("#app");

@@ -23,8 +23,6 @@
 <script>
     export default {};
 </script>
-
-
 <style scoped>
     .i-postion {
         position: absolute;
