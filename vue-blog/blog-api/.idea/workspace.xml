@@ -15,10 +15,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="db.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="db.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1041">
+            <state relative-caret-position="-15">
               <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
               <folding>
                 <element signature="e#18#32#0" expanded="true" />
@@ -28,28 +28,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="view.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/api/view.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+            <state relative-caret-position="270">
+              <caret line="58" column="19" lean-forward="true" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
                 <element signature="e#393#960#0" expanded="false" />
                 <element signature="e#416#516#0" expanded="false" />
-                <marker date="1528110467054" expanded="true" signature="423:442" ph="select * fro... admin" />
-                <marker date="1528110467054" expanded="true" signature="553:610" ph="insert into admin... " />
-                <marker date="1528110467054" expanded="true" signature="711:750" ph="delete from admin... " />
-                <marker date="1528110467054" expanded="true" signature="846:900" ph="update admin... " />
-                <marker date="1528110467054" expanded="true" signature="1325:1355" ph="select * fro... kind" />
-                <marker date="1528110467054" expanded="true" signature="1325:1357" ph="select * fro... kind" />
-                <marker date="1528110467054" expanded="true" signature="1538:1556" ph="select * fro... kind" />
-                <marker date="1528110467054" expanded="true" signature="2036:2064" ph="insert into kind... " />
-                <marker date="1528110467054" expanded="true" signature="2036:2065" ph="insert into kind... " />
-                <marker date="1528110467054" expanded="true" signature="2036:2066" ph="insert into kind... " />
-                <marker date="1528110467054" expanded="true" signature="2036:2071" ph="insert into kind... " />
-                <marker date="1528110467054" expanded="true" signature="2303:2329" ph="delete from kind... " />
-                <marker date="1528110467054" expanded="true" signature="2303:2331" ph="delete from kind... " />
+                <marker date="1528119036497" expanded="true" signature="423:442" ph="select * fro... admin" />
+                <marker date="1528119036497" expanded="true" signature="553:610" ph="insert into admin... " />
+                <marker date="1528119036497" expanded="true" signature="711:750" ph="delete from admin... " />
+                <marker date="1528119036497" expanded="true" signature="846:900" ph="update admin... " />
+                <marker date="1528119036497" expanded="true" signature="1385:1415" ph="select * fro... kind" />
+                <marker date="1528119036497" expanded="true" signature="1385:1416" ph="select * fro... kind" />
+                <marker date="1528119036497" expanded="true" signature="1385:1418" ph="select * fro... kind" />
+                <marker date="1528119036497" expanded="true" signature="1385:1419" ph="select * fro... kind" />
+                <marker date="1528119036497" expanded="true" signature="1575:1593" ph="select * fro... kind" />
+                <marker date="1528119036497" expanded="true" signature="2073:2101" ph="insert into kind... " />
+                <marker date="1528119036497" expanded="true" signature="2073:2102" ph="insert into kind... " />
+                <marker date="1528119036497" expanded="true" signature="2073:2103" ph="insert into kind... " />
+                <marker date="1528119036497" expanded="true" signature="2073:2108" ph="insert into kind... " />
+                <marker date="1528119036497" expanded="true" signature="2340:2366" ph="delete from kind... " />
+                <marker date="1528119036497" expanded="true" signature="2340:2368" ph="delete from kind... " />
               </folding>
             </state>
           </provider>
@@ -293,19 +295,21 @@
             <element signature="e#0#19#0" expanded="true" />
             <element signature="e#393#960#0" expanded="false" />
             <element signature="e#416#516#0" expanded="false" />
-            <marker date="1528110467054" expanded="true" signature="423:442" ph="select * fro... admin" />
-            <marker date="1528110467054" expanded="true" signature="553:610" ph="insert into admin... " />
-            <marker date="1528110467054" expanded="true" signature="711:750" ph="delete from admin... " />
-            <marker date="1528110467054" expanded="true" signature="846:900" ph="update admin... " />
-            <marker date="1528110467054" expanded="true" signature="1325:1355" ph="select * fro... kind" />
-            <marker date="1528110467054" expanded="true" signature="1325:1357" ph="select * fro... kind" />
-            <marker date="1528110467054" expanded="true" signature="1538:1556" ph="select * fro... kind" />
-            <marker date="1528110467054" expanded="true" signature="2036:2064" ph="insert into kind... " />
-            <marker date="1528110467054" expanded="true" signature="2036:2065" ph="insert into kind... " />
-            <marker date="1528110467054" expanded="true" signature="2036:2066" ph="insert into kind... " />
-            <marker date="1528110467054" expanded="true" signature="2036:2071" ph="insert into kind... " />
-            <marker date="1528110467054" expanded="true" signature="2303:2329" ph="delete from kind... " />
-            <marker date="1528110467054" expanded="true" signature="2303:2331" ph="delete from kind... " />
+            <marker date="1528119036497" expanded="true" signature="423:442" ph="select * fro... admin" />
+            <marker date="1528119036497" expanded="true" signature="553:610" ph="insert into admin... " />
+            <marker date="1528119036497" expanded="true" signature="711:750" ph="delete from admin... " />
+            <marker date="1528119036497" expanded="true" signature="846:900" ph="update admin... " />
+            <marker date="1528119036497" expanded="true" signature="1385:1415" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="1385:1416" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="1385:1418" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="1385:1419" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="1575:1593" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="2073:2101" ph="insert into kind... " />
+            <marker date="1528119036497" expanded="true" signature="2073:2102" ph="insert into kind... " />
+            <marker date="1528119036497" expanded="true" signature="2073:2103" ph="insert into kind... " />
+            <marker date="1528119036497" expanded="true" signature="2073:2108" ph="insert into kind... " />
+            <marker date="1528119036497" expanded="true" signature="2340:2366" ph="delete from kind... " />
+            <marker date="1528119036497" expanded="true" signature="2340:2368" ph="delete from kind... " />
           </folding>
         </state>
       </provider>
@@ -329,19 +333,21 @@
             <element signature="e#0#19#0" expanded="true" />
             <element signature="e#393#960#0" expanded="false" />
             <element signature="e#416#516#0" expanded="false" />
-            <marker date="1528110467054" expanded="true" signature="423:442" ph="select * fro... admin" />
-            <marker date="1528110467054" expanded="true" signature="553:610" ph="insert into admin... " />
-            <marker date="1528110467054" expanded="true" signature="711:750" ph="delete from admin... " />
-            <marker date="1528110467054" expanded="true" signature="846:900" ph="update admin... " />
-            <marker date="1528110467054" expanded="true" signature="1325:1355" ph="select * fro... kind" />
-            <marker date="1528110467054" expanded="true" signature="1325:1357" ph="select * fro... kind" />
-            <marker date="1528110467054" expanded="true" signature="1538:1556" ph="select * fro... kind" />
-            <marker date="1528110467054" expanded="true" signature="2036:2064" ph="insert into kind... " />
-            <marker date="1528110467054" expanded="true" signature="2036:2065" ph="insert into kind... " />
-            <marker date="1528110467054" expanded="true" signature="2036:2066" ph="insert into kind... " />
-            <marker date="1528110467054" expanded="true" signature="2036:2071" ph="insert into kind... " />
-            <marker date="1528110467054" expanded="true" signature="2303:2329" ph="delete from kind... " />
-            <marker date="1528110467054" expanded="true" signature="2303:2331" ph="delete from kind... " />
+            <marker date="1528119036497" expanded="true" signature="423:442" ph="select * fro... admin" />
+            <marker date="1528119036497" expanded="true" signature="553:610" ph="insert into admin... " />
+            <marker date="1528119036497" expanded="true" signature="711:750" ph="delete from admin... " />
+            <marker date="1528119036497" expanded="true" signature="846:900" ph="update admin... " />
+            <marker date="1528119036497" expanded="true" signature="1385:1415" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="1385:1416" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="1385:1418" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="1385:1419" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="1575:1593" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="2073:2101" ph="insert into kind... " />
+            <marker date="1528119036497" expanded="true" signature="2073:2102" ph="insert into kind... " />
+            <marker date="1528119036497" expanded="true" signature="2073:2103" ph="insert into kind... " />
+            <marker date="1528119036497" expanded="true" signature="2073:2108" ph="insert into kind... " />
+            <marker date="1528119036497" expanded="true" signature="2340:2366" ph="delete from kind... " />
+            <marker date="1528119036497" expanded="true" signature="2340:2368" ph="delete from kind... " />
           </folding>
         </state>
       </provider>
@@ -404,38 +410,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/api/view.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#393#960#0" expanded="false" />
-            <element signature="e#416#516#0" expanded="false" />
-            <marker date="1528110467054" expanded="true" signature="423:442" ph="select * fro... admin" />
-            <marker date="1528110467054" expanded="true" signature="553:610" ph="insert into admin... " />
-            <marker date="1528110467054" expanded="true" signature="711:750" ph="delete from admin... " />
-            <marker date="1528110467054" expanded="true" signature="846:900" ph="update admin... " />
-            <marker date="1528110467054" expanded="true" signature="1325:1355" ph="select * fro... kind" />
-            <marker date="1528110467054" expanded="true" signature="1325:1357" ph="select * fro... kind" />
-            <marker date="1528110467054" expanded="true" signature="1538:1556" ph="select * fro... kind" />
-            <marker date="1528110467054" expanded="true" signature="2036:2064" ph="insert into kind... " />
-            <marker date="1528110467054" expanded="true" signature="2036:2065" ph="insert into kind... " />
-            <marker date="1528110467054" expanded="true" signature="2036:2066" ph="insert into kind... " />
-            <marker date="1528110467054" expanded="true" signature="2036:2071" ph="insert into kind... " />
-            <marker date="1528110467054" expanded="true" signature="2303:2329" ph="delete from kind... " />
-            <marker date="1528110467054" expanded="true" signature="2303:2331" ph="delete from kind... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/db.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1041">
+        <state relative-caret-position="-15">
           <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
           <folding>
             <element signature="e#18#32#0" expanded="true" />
             <marker date="1528021003007" expanded="true" signature="2097:2116" ph="select * fro... admin" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="58" column="19" lean-forward="true" selection-start-line="58" selection-start-column="19" selection-end-line="58" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#393#960#0" expanded="false" />
+            <element signature="e#416#516#0" expanded="false" />
+            <marker date="1528119036497" expanded="true" signature="423:442" ph="select * fro... admin" />
+            <marker date="1528119036497" expanded="true" signature="553:610" ph="insert into admin... " />
+            <marker date="1528119036497" expanded="true" signature="711:750" ph="delete from admin... " />
+            <marker date="1528119036497" expanded="true" signature="846:900" ph="update admin... " />
+            <marker date="1528119036497" expanded="true" signature="1385:1415" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="1385:1416" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="1385:1418" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="1385:1419" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="1575:1593" ph="select * fro... kind" />
+            <marker date="1528119036497" expanded="true" signature="2073:2101" ph="insert into kind... " />
+            <marker date="1528119036497" expanded="true" signature="2073:2102" ph="insert into kind... " />
+            <marker date="1528119036497" expanded="true" signature="2073:2103" ph="insert into kind... " />
+            <marker date="1528119036497" expanded="true" signature="2073:2108" ph="insert into kind... " />
+            <marker date="1528119036497" expanded="true" signature="2340:2366" ph="delete from kind... " />
+            <marker date="1528119036497" expanded="true" signature="2340:2368" ph="delete from kind... " />
           </folding>
         </state>
       </provider>

@@ -52,12 +52,13 @@ class PostKind(Resource):
     def get(self):
         args = self.parser.parse_args()
         if args.get('name'):
-            sql = "select * from kind where name={}".format(args.get('name'))
+            print(args.get('name'))
+            # 条件的单引号不能少
+            sql = "select * from kind where name='{}'".format(args.get('name'))
             res = db_pool_object.select(sql)
             if res:
                 return "error"
         else:
-            print('---')
             sql = "select * from kind"
             res = db_pool_object.select(sql)  # ((2, 'python'), (3, 'javascript'))
             res_list = []  # 结果字典

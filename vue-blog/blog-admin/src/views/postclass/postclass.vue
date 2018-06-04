@@ -37,6 +37,7 @@ export default {
     return {
       // tableData:null 显示暂无数据
       tableData: []
+      //分类检验变量
     }
   },
   // 拿数据
@@ -57,16 +58,22 @@ export default {
     //添加
     addKind() {
       // 数据更新
+      // 找个变量接受vue实例，以便内部访问
       let _this = this
       this.$prompt('分类名', '提示', {
         confirmButtonText: '确定',
-        cancelButtonText: '取消'
+        cancelButtonText: '取消',
         //   inputValidator进行校验
-        // inputValidator(){
-        //     return 'error'
-        // },
-        //   inputPattern: /[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?/,
-        //   inputErrorMessage: '分类名已存在'
+        inputValidator(value) {
+          // value输入的参数
+          for (let i = 0; i < _this.tableData.length; i++) {
+            // console.log(Boolean(_this.tableData[i]['kind_name'] == value))
+            if (_this.tableData[i]['kind_name'] == value) {
+              return false
+            }
+          }
+        },
+        inputErrorMessage: '分类名已存在'
       })
         .then(({ value }) => {
           this.$message({
@@ -81,9 +88,9 @@ export default {
               _this.axios
                 .get('http://127.0.0.1:5000/')
                 .then(function(response) {
-                  console.log(response.data)
+                  // console.log(response.data)
                   _this.tableData = JSON.parse(response.data)
-                  console.log(_this.tableData)
+                  // console.log(_this.tableData)
                   _this.$router.push({ name: 'kind' })
                 })
                 .catch(function(error) {
