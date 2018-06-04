@@ -1,14 +1,6 @@
 <template>
     <div>
         <div>
-            <el-row :gutter="10">
-                <el-col :span="4">
-                    <el-input placeholder="请输入内容"></el-input>
-                </el-col>
-                <el-button type="primary" icon="el-icon-search">搜索</el-button>
-            </el-row>
-        </div>
-        <div>
             <el-table :data="tableData" style="width: 100%">
                 <el-table-column type="index" width="50">
                 </el-table-column>

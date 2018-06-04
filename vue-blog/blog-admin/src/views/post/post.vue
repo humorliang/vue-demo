@@ -12,15 +12,15 @@
         <el-table :data="tableData" style="width: 100%">
             <el-table-column label="ID" type="index" width="50">
             </el-table-column>
-            <el-table-column prop="date" label="文章日期" width="180">
+            <el-table-column prop="date" label="文章日期" width="120">
             </el-table-column>
             <el-table-column prop="name" label="作者" width="120">
             </el-table-column>
             <el-table-column prop="address" label="标题">
             </el-table-column>
-            <el-table-column label="标签">
+            <el-table-column label="分类">
                 <template slot-scope="scope">
-                    <el-tag v-for="(o,index) of scope.row.label" :key="index" size="mini" type="success">{{o}}</el-tag>
+                    <el-tag  size="samll" type="success">{{scope.row.kind}}</el-tag>
                 </template>
             </el-table-column>
             <el-table-column label="操作">
@@ -43,28 +43,32 @@ export default {
           date: '2016-05-02',
           name: 'tempt',
           address: '这是文章的标题',
-          label: ['label1', 'label2']
+          kind: 'python'
         },
         {
           date: '2016-05-04',
           name: 'tempt',
           address: '这是文章的标题',
-          label: ['label1', 'label2']
+          kind: 'python'
         },
         {
           date: '2016-05-01',
           name: 'tempt',
           address: '这是文章的标题',
-          label: ['label1', 'label2']
+          kind: 'python'          
         },
         {
           date: '2016-05-03',
           name: 'tempt',
           address: '这是文章的标题',
-          label: ['label1', 'label2']
+          kind: 'python'          
         }
       ]
     }
+  },
+  // 拿数据
+  created(){
+    
   },
   methods: {
     handleEdit(index, row) {
@@ -72,7 +76,6 @@ export default {
     },
     handleDelete(index, row) {
       console.log(index, row)
-
       this.$confirm('是否真的删除这篇文章？', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',

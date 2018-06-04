@@ -29,13 +29,15 @@
                             </template>
                             <el-menu-item index="2-1" @click="toPostList">文章列表</el-menu-item>
                             <el-menu-item index="2-2" @click="toAddPost">新建文章</el-menu-item>
+                            <el-menu-item index="2-3" @click="toPostList">文章数据</el-menu-item>
                         </el-submenu>
                         <el-submenu index="3">
                             <template slot="title">
                                 <i class="iconfont icon-user el-icon-user" ></i>
-                                <span>用户管理</span>
+                                <span>其他设置</span>
                             </template>
-                            <el-menu-item index="3-1" @click="toUserList">用户列表</el-menu-item>
+                            <el-menu-item index="3-1" @click="toUserList">友链管理</el-menu-item>
+                            <el-menu-item index="3-2" @click="toUserList">广告管理</el-menu-item>
                         </el-submenu>
                         <el-submenu index="4">
                             <template slot="title">
@@ -43,7 +45,7 @@
                                 <span>评论管理</span>
                             </template>
                             <el-menu-item index="4-1" @click="toCommentList">文章评论</el-menu-item>
-                            <el-menu-item index="4-1" @click="toMsgList">用户留言</el-menu-item>
+                            <el-menu-item index="4-2" @click="toMsgList">用户留言</el-menu-item>
                         </el-submenu>
                         <el-submenu index="5">
                             <template slot="title">
