@@ -23,7 +23,7 @@ export default {
     //实例化编辑器类
     var editor = new E(this.$refs.editor)
     editor.customConfig.onchange = html => {
-    //文本编辑器的内容为html格式
+    //文本编辑器的内容为html格式并赋值
       this.editorContent = html
     }
     // 初始化编辑器

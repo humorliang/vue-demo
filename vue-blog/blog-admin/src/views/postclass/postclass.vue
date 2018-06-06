@@ -44,7 +44,7 @@ export default {
   created() {
     let _this = this
     this.axios
-      .get('http://127.0.0.1:5000/')
+      .get('http://127.0.0.1:5000/api/v_1.0/kind/')
       .then(function(response) {
         // console.log(response.data)
         _this.tableData = JSON.parse(response.data)
@@ -81,12 +81,12 @@ export default {
             message: '添加: ' + value + ' 分类成功'
           })
           this.axios
-            .post('http://127.0.0.1:5000/?name=' + value)
+            .post('http://127.0.0.1:5000/api/v_1.0/kind/?name=' + value)
             .then(function(response) {
               console.log(response)
               // 添加成功后刷新数据
               _this.axios
-                .get('http://127.0.0.1:5000/')
+                .get('http://127.0.0.1:5000/api/v_1.0/kind/')
                 .then(function(response) {
                   // console.log(response.data)
                   _this.tableData = JSON.parse(response.data)
@@ -125,7 +125,7 @@ export default {
           let _this = this
           console.log(id)
           this.axios
-            .delete('http://127.0.0.1:5000/?id=' + id)
+            .delete('http://127.0.0.1:5000/api/v_1.0/kind/?id=' + id)
             .then(function(response) {
               // console.log(response)
               if (response.status == 200) {

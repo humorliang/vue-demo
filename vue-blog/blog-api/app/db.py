@@ -97,6 +97,7 @@ class MysqlOption(object):
 
 if __name__ == "__main__":
     mysql_ = MysqlOption()
-    sql = "select * from admin"
-    res = mysql_.search(sql)  # ((1, 'admin', '123456'), (2, 'user', '123'))
+    sql = "select post.id,post.title,post.publish_date,post.desc_info,post.content" \
+          " from post inner join kind on post.kind_id=kind.id and kind.name='c++'"
+    res = mysql_.select(sql)
     print(res)

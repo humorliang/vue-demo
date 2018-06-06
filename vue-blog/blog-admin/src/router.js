@@ -15,11 +15,13 @@ Vue.use(Router);
 
 export default new Router({
   routes: [{
-    path: "/",
-    name: "home",
+    path: '/',
     redirect: {
       name: 'main'
-    },
+    }
+  }, {
+    path: "/admin",
+    name: "admin",
     component: Home,
     children: [{
       path: "main",
@@ -55,5 +57,5 @@ export default new Router({
     name: "login",
     component: Login
   }],
-  mode:'history'
+  mode: 'history'
 });
