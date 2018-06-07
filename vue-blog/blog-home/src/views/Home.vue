@@ -22,7 +22,7 @@ export default {
   created: function() {
     let _this = this
     this.axios
-      .get('http://127.0.0.1:5000/api/v_1.0/post/', {
+      .get('http://humorliang.top:5000/api/v_1.0/post/', {
         params: {
           limit: 3
         }

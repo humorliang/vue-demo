@@ -28,11 +28,13 @@ class MysqlOption(object):
         self.db = PooledDB(
             pymysql,
             10,
+            # 以下是传给数据驱动的参数
             host="127.0.0.1",
             port=3306,
             user="root",
             password="123456",
-            db="blog"
+            db="blog",
+            charset='utf8'  # 一定要设置编码不然中文sql会出问题
         )
 
     def select(self, sql):

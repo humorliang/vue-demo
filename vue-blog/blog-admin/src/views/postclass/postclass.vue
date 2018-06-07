@@ -44,7 +44,7 @@ export default {
   created() {
     let _this = this
     this.axios
-      .get('http://127.0.0.1:5000/api/v_1.0/kind/')
+      .get('http://humorliang.top:5000/api/v_1.0/kind/')
       .then(function(response) {
         // console.log(response.data)
         _this.tableData = JSON.parse(response.data)
@@ -81,12 +81,12 @@ export default {
             message: '添加: ' + value + ' 分类成功'
           })
           this.axios
-            .post('http://127.0.0.1:5000/api/v_1.0/kind/?name=' + value)
+            .post('http://humorliang.top:5000/api/v_1.0/kind/?name=' + value)
             .then(function(response) {
               console.log(response)
               // 添加成功后刷新数据
               _this.axios
-                .get('http://127.0.0.1:5000/api/v_1.0/kind/')
+                .get('http://humorliang.top:5000/api/v_1.0/kind/')
                 .then(function(response) {
                   // console.log(response.data)
                   _this.tableData = JSON.parse(response.data)
@@ -110,7 +110,7 @@ export default {
     },
     // 删除
     handleDelete(index, row, id) {
-      this.$confirm('是否真的删除这个分类吗？', '提示', {
+      this.$confirm('是否真的删除这个分类吗？分类下的文章都会被删除！', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning',
@@ -125,7 +125,7 @@ export default {
           let _this = this
           console.log(id)
           this.axios
-            .delete('http://127.0.0.1:5000/api/v_1.0/kind/?id=' + id)
+            .delete('http://humorliang.top:5000/api/v_1.0/kind/?id=' + id)
             .then(function(response) {
               // console.log(response)
               if (response.status == 200) {

@@ -1,6 +1,6 @@
 <template>
     <div>
-        main
+        <h2 style="text-align:center;color:blue;">这是管理员后台主页</h2>
     </div>
 </template>
 
@@ -12,4 +12,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

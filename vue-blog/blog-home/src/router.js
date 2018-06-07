@@ -11,39 +11,53 @@ Vue.use(Router);
 
 // 导入组件
 import PostList from './views/PostList.vue'
+import AllPostList from './views/AllPostList.vue'
 import Article from './views/Article.vue'
 import NotFoundPage from './views/NotFoundPage.vue'
 import Board from './views/Board.vue'
+import Base from './views/Base.vue'
 
 
 
 export default new Router({
   routes: [{
       path: "/",
-      name: "home",
-      component: Home
-    },
-    //文章列表路由
-    {
-      path: "/postList",
-      name:"postlist",
-      component: PostList
-    },
-    {
-      path: '/article',
-      name: 'article',
-      component:Article
-    },
-    {
-      path: '/board',
-      name: 'board',
-      component: Board
+      name: "base",
+      component: Base,
+      redirect: {
+        name: 'home'
+      },
+      children: [{
+          path: "home",
+          name: "home",
+          component: Home
+        },
+        //文章列表路由
+        {
+          path: "postlist/:kind_id/",
+          name: "postlist",
+          component: PostList
+        },
+        {
+          path: "menupost/:t/",
+          name: "menupost",
+          component: AllPostList
+        },
+        {
+          path: 'article/:id/',
+          name: 'article',
+          component: Article
+        },
+        {
+          path: 'board',
+          name: 'board',
+          component: Board
+        },
+      ]
     },
     {
       path: '*',
       component: NotFoundPage
     }
-  ],
-  // 去除#号
-  mode: 'history'
+  ]
 });

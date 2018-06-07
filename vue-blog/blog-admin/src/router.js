@@ -9,7 +9,7 @@ import user from './views/user/user.vue'
 import comment from './views/comment/comment.vue'
 import leaveMsg from './views/comment/leaveMsg.vue'
 import postclass from './views/postclass/postclass.vue'
-import addarticle from './views/post/addaticle.vue'
+import addarticle from './views/post/addarticle.vue'
 
 Vue.use(Router);
 
@@ -28,7 +28,7 @@ export default new Router({
       name: "main",
       component: main
     }, {
-      path: "post",
+      path: "post/:t",
       name: "post",
       component: post
     }, {
@@ -56,6 +56,5 @@ export default new Router({
     path: "/login",
     name: "login",
     component: Login
-  }],
-  mode: 'history'
+  }]
 });

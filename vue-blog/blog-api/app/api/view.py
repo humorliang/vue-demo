@@ -1,5 +1,6 @@
 from app import app
 from app.db import MysqlOption
+from flask import render_template
 import json
 # 导入  资源管理模块  路由设计模块  参数解析器
 from flask_restful import Resource, Api, reqparse, request
@@ -105,9 +106,9 @@ class Post(Resource):
     def __init__(self):
         self.parser = reqparse.RequestParser()
         self.parser.add_argument('post_id', type=int)
-        self.parser.add_argument('kind_name', type=int)
         self.parser.add_argument('kind_id', type=int)
         self.parser.add_argument('limit', type=int)
+        self.parser.add_argument('all', type=int)
         self.parser.add_argument('random_num', type=int)
         self.sql_dispose = MysqlDataTool()
 
@@ -116,52 +117,108 @@ class Post(Resource):
         args = self.parser.parse_args()
         # 根据id获取文章信息
         if args.get('post_id'):
-            sql = 'select title,author,content,publish_date from post where id={}'.format(args.get('post_id'))
-            res = db_pool_object.select(sql)
-            print(res)
-        # 根据分类获取文章
-        elif args.get('kind_name'):
-            sql = "select post.id,post.title,post.publish_date,post.desc_info,post.content" \
-                  " from post inner join kind on post.kind_id=kind.id and kind.name='{}'". \
-                format(args.get('kind_name'))
-            res = db_pool_object(sql)
+            try:
+                sql = 'select title,author,content,publish_date from post where id={}'.format(args.get('post_id'))
+                # print(sql)
+                res = db_pool_object.select(sql)
+                dic = {}
+                for item in res:
+                    dic['title'] = item[0]
+                    dic['author'] = item[1]
+                    dic['content'] = item[2]
+                    dic['time'] = str(item[3])
+                # print(dic)
+                return json.dumps(dic)
+            except Exception as err:
+                print(err)
+                return json.dumps({})
+
         # 根据分类的id获取文章
         elif args.get('kind_id'):
-            sql = "select post.id,post.title,post.publish_date,post.desc_info,post.content" \
-                  " from post inner join kind on post.kind_id={}". \
-                format(args.get('kind_id'))
-            res = db_pool_object.select(sql)
+            try:
+                sql = "select * from post inner join kind on post.kind_id={} and kind.id={}". \
+                    format(args.get('kind_id'), args.get('kind_id'))
+                res = db_pool_object.select(sql)
+                # print(res)
+                res_list = []  # 结果字典
+                for item in res:
+                    dic = {}
+                    dic['id'] = item[0]
+                    dic['date'] = str(item[5])  # 日期转换
+                    dic['title'] = item[1]
+                    dic['kind'] = item[-1]
+                    dic['imgUrl'] = item[6]
+                    dic['desc'] = item[2]
+                    dic['view_num'] = item[4]
+                    dic['thumbs'] = item[-5]
+                    res_list.append(dic)
+                return json.dumps(res_list)
+            except Exception as err:
+                print(err)
+                return json.dumps({})
         # 根据最新时间返回指定个数
         elif args.get('limit'):
-            sql = 'select * from post inner join kind on post.kind_id=kind.id order by post.publish_date desc limit {}'. \
-                format(args.get('limit'))
-            res = db_pool_object.select(sql)
-            # print(res)
-            res_list = []  # 结果字典
-            for item in res:
-                dic = {}
-                dic['id'] = item[0]
-                dic['date'] = str(item[5])  # 日期转换
-                dic['title'] = item[1]
-                dic['kind'] = item[-1]
-                dic['imgUrl'] = item[6]
-                dic['desc'] = item[2]
-                dic['view_num'] = item[4]
-                dic['thumbs'] = item[-5]
-                res_list.append(dic)
-            return json.dumps(res_list)
+            try:
+                sql = 'select * from post inner join kind on post.kind_id=kind.id order by post.publish_date desc limit {}'. \
+                    format(args.get('limit'))
+                res = db_pool_object.select(sql)
+                # print(res)
+                res_list = []  # 结果字典
+                for item in res:
+                    dic = {}
+                    dic['id'] = item[0]
+                    dic['date'] = str(item[5])  # 日期转换
+                    dic['title'] = item[1]
+                    dic['kind'] = item[-1]
+                    dic['imgUrl'] = item[6]
+                    dic['desc'] = item[2]
+                    dic['view_num'] = item[4]
+                    dic['thumbs'] = item[-5]
+                    res_list.append(dic)
+                return json.dumps(res_list)
+            except Exception as err:
+                print(err)
+                return json.dumps({})
+        # 返回所有文章
+        elif args.get('all'):
+            try:
+                sql = 'select * from post inner join kind on post.kind_id=kind.id'
+                res = db_pool_object.select(sql)
+                print(res)
+                res_list = []  # 结果字典
+                for item in res:
+                    dic = {}
+                    dic['id'] = item[0]
+                    dic['date'] = str(item[5])  # 日期转换
+                    dic['title'] = item[1]
+                    dic['kind'] = item[-1]
+                    dic['imgUrl'] = item[6]
+                    dic['desc'] = item[2]
+                    dic['view_num'] = item[4]
+                    dic['thumbs'] = item[-5]
+                    res_list.append(dic)
+                return json.dumps(res_list)
+            except Exception as err:
+                print(err)
+                return json.dumps({})
+
         # 随机文章
         elif args.get('random_num'):
-            sql = "select id,title from post limit {}".format(args.get('random_num'))
-            res = db_pool_object.select(sql)
-            print(res)
-            res_list = []
-            for item in res:
-                dic = {}
-                dic['post_id'] = item[0]
-                dic['title'] = item[1]
-                res_list.append(dic)
-            return json.dumps(res_list)
+            try:
+                sql = "select id,title from post limit {}".format(args.get('random_num'))
+                res = db_pool_object.select(sql)
+                # print(res)
+                res_list = []
+                for item in res:
+                    dic = {}
+                    dic['post_id'] = item[0]
+                    dic['title'] = item[1]
+                    res_list.append(dic)
+                return json.dumps(res_list)
+            except Exception as err:
+                print(err)
+                return json.dumps({})
+
         else:
             try:
                 sql = 'select * from post inner join kind on post.kind_id=kind.id'
@@ -188,7 +245,7 @@ class Post(Resource):
         try:
             sql_s_kind = "select id from kind where name='{}'".format(post_data.get('kind'))
             kind_name = db_pool_object.select(sql_s_kind)
-            print(self.sql_dispose.sql_row_value_one(kind_name, 0))
+            # print(self.sql_dispose.sql_row_value_one(kind_name, 0))
             p_title = post_data.get('title')
             p_desc = post_data.get('desc')
             p_author = post_data.get('author')

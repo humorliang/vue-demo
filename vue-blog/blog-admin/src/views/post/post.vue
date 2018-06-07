@@ -9,7 +9,7 @@
         <el-button type="primary" icon="el-icon-plus" @click="toArticle">新建文章</el-button>
       </el-row>
     </div>
-    <el-table :data="tableData" style="width: 100%">
+    <el-table :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)" style="width: 100%">
       <el-table-column label="ID" type="index" width="50">
       </el-table-column>
       <el-table-column prop="date" label="文章日期" width="120">
@@ -31,6 +31,11 @@
         </template>
       </el-table-column>
     </el-table>
+    <!-- 分页 -->
+    <div>
+      <el-pagination background layout="prev, pager, next" :total="total" :page-size="pagesize" @current-change="current_change">
+      </el-pagination>
+    </div>
   </div>
 </template>
 
@@ -38,17 +43,21 @@
 export default {
   data() {
     return {
-      tableData: []
+      tableData: [],
+      total: 0, //默认数据总数
+      pagesize: 7, //每页的数据条数
+      currentPage: 1 //默认开始页面
     }
   },
   // 拿数据
   created() {
     let _this = this
     this.axios
-      .get('http://127.0.0.1:5000/api/v_1.0/post/')
+      .get('http://humorliang.top:5000/api/v_1.0/post/')
       .then(function(response) {
         // console.log(response.data)
         _this.tableData = JSON.parse(response.data)
+        _this.total = _this.tableData.length
       })
       .catch(function(err) {
         console.log(err.data)
@@ -76,7 +85,7 @@ export default {
           })
           this.tableData.splice(index, 1)
           this.axios
-            .delete('http://127.0.0.1:5000/api/v_1.0/post/?post_id=' + id)
+            .delete('http://humorliang.top:5000/api/v_1.0/post/?post_id=' + id)
             .then(function(response) {
               console.log(response.data)
             })
@@ -90,13 +99,12 @@ export default {
             message: '已取消删除'
           })
         })
+      this.$router.push({ name: 'post', params: { t: Date.now() } })
+    },
+    // 点击触发的回调函数，返回当前的页数也就是currentPage的值
+    current_change: function(currentPage) {
+      this.currentPage = currentPage
     }
   },
-  watch: {
-    '$route' (to, from) {
-      // 对路由变化作出响应...
-      console.log('change');
-    }
-  }
 }
 </script>

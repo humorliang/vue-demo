@@ -39,7 +39,7 @@
     <div>
       <!-- 编辑器 -->
       <h2 style="color:#676;padding-left:20px;margin-bottom:0;margin-top:30px;">文章正文：</h2>
-      <div>
+      <div id="my-editor">
         <div ref="editor" style="text-align:left;z-index:10 !important;"></div>
       </div>
       <div>
@@ -93,7 +93,7 @@ export default {
   created() {
     let _this = this
     this.axios
-      .get('http://127.0.0.1:5000/api/v_1.0/kind/')
+      .get('http://humorliang.top:5000/api/v_1.0/kind/')
       .then(function(response) {
         var kindData = JSON.parse(response.data)
         var kind_name_list = []
@@ -145,7 +145,7 @@ export default {
           }
           console.log(postData.date)
           this.axios
-            .post('http://127.0.0.1:5000/api/v_1.0/post/', postData)
+            .post('http://humorliang.top:5000/api/v_1.0/post/', postData)
             .then(function(response) {
               console.log(response.data)
             })
@@ -157,9 +157,7 @@ export default {
           return false
         }
       })
-      this.$router.push({
-        name: 'main'
-      })
+      this.$router.push({ name: 'post', params: { t: Date.now() } })
       // console.log(this.dataForm)
     },
     submitUpload() {

@@ -2,7 +2,7 @@
     <div>
         <el-row v-for="item of data" :key="item.id" class="post-item">
             <el-card class="box-card">
-                <div class="post-tag pointer-click">
+                <div class="post-tag">
                     <el-tag>{{item.kind}}</el-tag>
                 </div>
                 <el-col :span="6">
@@ -11,19 +11,19 @@
                 </el-col>
                 <el-col :span="17" class="post-content">
                     <div class="">
-                        <h2 @click="toPostCon(item.id)" class="pointer-click">{{item.title}}</h2>
-                        <p class="pointer-click">
+                        <h2 @click="toArticle(item.id)" class="pointer-click">{{item.title}}</h2>
+                        <p class="pointer-click" @click="toArticle(item.id)">
                             <!-- 对描述进行过滤 -->
                             {{strLength(item.desc)}}
                         </p>
-                        <div>
-                            <div class="cf">
+                        <div style="margin-top:20px;">
+                            <div class="cf" >
                                 <div class="post-info">
                                     <div class="">
-                                        <i class="iconfont icon-shijian"></i>{{item.date}}</div>
+                                        <i class="iconfont icon-shijian" style="font-size:14px"></i>{{item.date}}</div>
                                 </div>
                                 <div class="post-info">
-                                    <div class="pointer-click" @click="toPostCon(item.id)">
+                                    <div class="pointer-click" @click="toArticle(item.id)">
                                         <i class="iconfont icon-liulan"></i>({{item.view_num}})</div>
                                 </div>
                                 <div class="post-info">
@@ -46,19 +46,19 @@ export default {
   // 接受父组件的属性名称
   props: ['data'],
   methods: {
-    toPostCon(id) {
+    toArticle(id) {
       // console.log(id);
-      this.$router.push({ name: 'article', query: { id: id } })
+      this.$router.push({ name: 'article', params: { id: id } })
     },
     strLength(str) {
     //   90字符
-        if (str.length >= 90) {
-          str = str.slice(0, 90) + '...'
+        if (str.length >= 120) {
+          str = str.slice(0, 120) + '...'
           return str
         } else {
           return str
         }
-      console.log(str)
+      // console.log(str)
     }
   },
   mounted: function() {}

@@ -28,18 +28,17 @@ export default {
     }
   },
   created: function() {
-    var kind_id = this.$route.params.kind_id
     let _this = this
     this.axios
       .get('http://humorliang.top:5000/api/v_1.0/post/', {
         params: {
-          kind_id: kind_id
+          all: Date.now()
         }
       })
       .then(function(response) {
         _this.data = JSON.parse(response.data)
-         _this.total = _this.data.length
-        // console.log(_this.data)
+        _this.total = _this.data.length
+        // console.log(_this.total)
       })
       .catch(function(response) {
         console.log(response.data)
@@ -52,25 +51,6 @@ export default {
     // 点击触发的回调函数，返回当前的页数也就是currentPage的值
     current_change: function(currentPage) {
       this.currentPage = currentPage
-    }
-  },
-  watch: {
-    $route(to, from) {
-      var kind_id = this.$route.params.kind_id
-      let _this = this
-      this.axios
-        .get('http://humorliang.top:5000/api/v_1.0/post/', {
-          params: {
-            kind_id: kind_id
-          }
-        })
-        .then(function(response) {
-          _this.data = JSON.parse(response.data)
-          // console.log(_this.data)
-        })
-        .catch(function(response) {
-          console.log(response.data)
-        })
     }
   }
 }
