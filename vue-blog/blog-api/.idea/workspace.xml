@@ -11,22 +11,58 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/blog_api$db.coverage" NAME="db Coverage Results" MODIFIED="1528182414449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
-    <SUITE FILE_PATH="coverage/blog_api$run.coverage" NAME="run Coverage Results" MODIFIED="1528282994166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/blog_api$run.coverage" NAME="run Coverage Results" MODIFIED="1528349265367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="db.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="db.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/db.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
+            <state relative-caret-position="1442">
               <caret line="96" column="25" lean-forward="false" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
               <folding>
                 <element signature="e#18#32#0" expanded="true" />
-                <element signature="e#259#2106#0" expanded="false" />
-                <element signature="e#359#633#0" expanded="false" />
                 <marker date="1528249827772" expanded="true" signature="2174:2310" ph="select * fro... post" />
                 <marker date="1528249827772" expanded="true" signature="2174:2330" ph="select post.... post" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/api/view.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="267" column="65" lean-forward="false" selection-start-line="267" selection-start-column="12" selection-end-line="267" selection-end-column="80" />
+              <folding>
+                <element signature="e#755#966#0" expanded="false" />
+                <element signature="e#1027#1275#0" expanded="false" />
+                <element signature="e#1337#1613#0" expanded="false" />
+                <element signature="e#2112#3165#0" expanded="false" />
+                <element signature="e#3609#8405#0" expanded="false" />
+                <marker date="1528351155149" expanded="true" signature="2360:2378" ph="select * fro... kind" />
+                <marker date="1528351155149" expanded="true" signature="2822:2857" ph="insert into kind... " />
+                <marker date="1528351155149" expanded="true" signature="3089:3115" ph="delete from kind... " />
+                <marker date="1528351155149" expanded="true" signature="3749:3809" ph="select title... post" />
+                <marker date="1528351155149" expanded="true" signature="4423:4489" ph="select * fro... post" />
+                <marker date="1528351155149" expanded="true" signature="5383:5480" ph="select * fro... post" />
+                <marker date="1528351155149" expanded="true" signature="6343:6401" ph="select * fro... post" />
+                <marker date="1528351155149" expanded="true" signature="7217:7249" ph="select id,ti... post" />
+                <marker date="1528351155149" expanded="true" signature="7784:7842" ph="select * fro... post" />
+                <marker date="1528351155149" expanded="true" signature="8573:8608" ph="select id fr... kind" />
+                <marker date="1528351155149" expanded="true" signature="9450:9499" ph="insert into post... " />
+                <marker date="1528351155149" expanded="true" signature="9787:9813" ph="delete from post... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,6 +125,17 @@
             <path>
               <item name="blog-api" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog-api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog-api" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="blog-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blog-api" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -196,8 +243,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30340558" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1968254" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -221,7 +268,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -232,8 +279,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#18#32#0" expanded="true" />
-            <element signature="e#259#2106#0" expanded="false" />
-            <element signature="e#359#633#0" expanded="false" />
             <marker date="1528249827772" expanded="true" signature="2174:2310" ph="select * fro... post" />
             <marker date="1528249827772" expanded="true" signature="2174:2330" ph="select post.... post" />
           </folding>
@@ -246,8 +291,18 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#18#32#0" expanded="true" />
-            <element signature="e#259#2106#0" expanded="false" />
-            <element signature="e#359#633#0" expanded="false" />
+            <marker date="1528249827772" expanded="true" signature="2174:2310" ph="select * fro... post" />
+            <marker date="1528249827772" expanded="true" signature="2174:2330" ph="select post.... post" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/db.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#18#32#0" expanded="true" />
             <marker date="1528249827772" expanded="true" signature="2174:2310" ph="select * fro... post" />
             <marker date="1528249827772" expanded="true" signature="2174:2330" ph="select post.... post" />
           </folding>
@@ -274,8 +329,6 @@
           <caret line="98" column="26" lean-forward="false" selection-start-line="98" selection-start-column="26" selection-end-line="98" selection-end-column="26" />
           <folding>
             <element signature="e#18#32#0" expanded="true" />
-            <element signature="e#259#2106#0" expanded="false" />
-            <element signature="e#359#633#0" expanded="false" />
             <marker date="1528249827772" expanded="true" signature="2174:2310" ph="select * fro... post" />
             <marker date="1528249827772" expanded="true" signature="2174:2330" ph="select post.... post" />
           </folding>
@@ -302,8 +355,6 @@
           <caret line="23" column="19" lean-forward="false" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
           <folding>
             <element signature="e#18#32#0" expanded="true" />
-            <element signature="e#259#2106#0" expanded="false" />
-            <element signature="e#359#633#0" expanded="false" />
             <marker date="1528249827772" expanded="true" signature="2174:2310" ph="select * fro... post" />
             <marker date="1528249827772" expanded="true" signature="2174:2330" ph="select post.... post" />
           </folding>
@@ -330,8 +381,6 @@
           <caret line="94" column="25" lean-forward="false" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
           <folding>
             <element signature="e#18#32#0" expanded="true" />
-            <element signature="e#259#2106#0" expanded="false" />
-            <element signature="e#359#633#0" expanded="false" />
             <marker date="1528249827772" expanded="true" signature="2174:2310" ph="select * fro... post" />
             <marker date="1528249827772" expanded="true" signature="2174:2330" ph="select post.... post" />
           </folding>
@@ -358,8 +407,6 @@
           <caret line="37" column="14" lean-forward="false" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
           <folding>
             <element signature="e#18#32#0" expanded="true" />
-            <element signature="e#259#2106#0" expanded="false" />
-            <element signature="e#359#633#0" expanded="false" />
             <marker date="1528249827772" expanded="true" signature="2174:2310" ph="select * fro... post" />
             <marker date="1528249827772" expanded="true" signature="2174:2330" ph="select post.... post" />
           </folding>
@@ -422,31 +469,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/index.html" />
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/index.html" />
-    <entry file="file://$PROJECT_DIR$/app/api/view.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="276" column="42" lean-forward="false" selection-start-line="276" selection-start-column="42" selection-end-line="276" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/db.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
+        <state relative-caret-position="1442">
           <caret line="96" column="25" lean-forward="false" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
           <folding>
             <element signature="e#18#32#0" expanded="true" />
-            <element signature="e#259#2106#0" expanded="false" />
-            <element signature="e#359#633#0" expanded="false" />
             <marker date="1528249827772" expanded="true" signature="2174:2310" ph="select * fro... post" />
             <marker date="1528249827772" expanded="true" signature="2174:2330" ph="select post.... post" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/api/view.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="267" column="65" lean-forward="false" selection-start-line="267" selection-start-column="12" selection-end-line="267" selection-end-column="80" />
+          <folding>
+            <element signature="e#755#966#0" expanded="false" />
+            <element signature="e#1027#1275#0" expanded="false" />
+            <element signature="e#1337#1613#0" expanded="false" />
+            <element signature="e#2112#3165#0" expanded="false" />
+            <element signature="e#3609#8405#0" expanded="false" />
+            <marker date="1528351155149" expanded="true" signature="2360:2378" ph="select * fro... kind" />
+            <marker date="1528351155149" expanded="true" signature="2822:2857" ph="insert into kind... " />
+            <marker date="1528351155149" expanded="true" signature="3089:3115" ph="delete from kind... " />
+            <marker date="1528351155149" expanded="true" signature="3749:3809" ph="select title... post" />
+            <marker date="1528351155149" expanded="true" signature="4423:4489" ph="select * fro... post" />
+            <marker date="1528351155149" expanded="true" signature="5383:5480" ph="select * fro... post" />
+            <marker date="1528351155149" expanded="true" signature="6343:6401" ph="select * fro... post" />
+            <marker date="1528351155149" expanded="true" signature="7217:7249" ph="select id,ti... post" />
+            <marker date="1528351155149" expanded="true" signature="7784:7842" ph="select * fro... post" />
+            <marker date="1528351155149" expanded="true" signature="8573:8608" ph="select id fr... kind" />
+            <marker date="1528351155149" expanded="true" signature="9450:9499" ph="insert into post... " />
+            <marker date="1528351155149" expanded="true" signature="9787:9813" ph="delete from post... " />
           </folding>
         </state>
       </provider>

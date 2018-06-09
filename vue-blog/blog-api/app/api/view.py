@@ -63,6 +63,21 @@ class MysqlDataTool(object):
             print(err)
             return cond_num
 
+    def transferContent(self, content):
+        if content is None:
+            return None
+        else:
+            string = ""
+            for c in content:
+                if c == '"':
+                    string += '\\\"'
+                elif c == "'":
+                    string += "\\\'"
+                elif c == "\\":
+                    string += "\\\\"
+                else:
+                    string += c
+            return string
 
 # api资源 路由
 # 定义一个分类api
@@ -240,7 +255,7 @@ class Post(Resource):
     def post(self):
         # 获取前台传来的json数据
         post_data = request.json
-        # print(type(post_data)) # dict类型
+        print(post_data)  # dict类型
         # 查找类名
         try:
             sql_s_kind = "select id from kind where name='{}'".format(post_data.get('kind'))
@@ -250,11 +265,13 @@ class Post(Resource):
             p_desc = post_data.get('desc')
             p_author = post_data.get('author')
             p_date = post_data.get('date')
-            p_content = post_data.get('content')
+            p_content=self.sql_dispose.transferContent(post_data.get('content'))
+            # p_content = post_data.get('content')
             p_kind = self.sql_dispose.sql_row_value_one(kind_name, 0)
-            sql = "insert into post(title,desc_info,content,publish_date,kind_id,author) " \
-                  "value ('{}','{}','{}','{}','{}','{}')".format(p_title, p_desc, p_content,
-                                                                 p_date, p_kind, p_author)
+            # sql = "insert into post(title,desc_info,content,publish_date,kind_id,author) " \
+            #       "value ('{}','{}','{}','{}','{}','{}')".format(p_title, p_desc, p_content,
+            #                                                      p_date, p_kind, p_author)
+            sql = "insert into post(title,content) VALUE ('%s','%s')" % (p_title, p_content)
             db_pool_object.insert(sql)
         except Exception as err:
             print(err)
